@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:todosapp/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           centerTitle: true,
           leading: const Text("Logo"),
           title: const Text(
-            "Ediləcəklər listəsi",
+            "Flutter app",
             style: TextStyle(
               color: Colors.white,
             ),
@@ -50,7 +52,21 @@ class _MyAppState extends State<MyApp> {
 // BODY START....
   Widget buildBody() {
     return Center(
-      child: Text(count.toString()),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(count.toString()),
+          Text(
+            "TEST TEXT",
+            style: TextStyle(
+              color: HexColor(dark),
+              fontSize: 40,
+              letterSpacing: 10,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
